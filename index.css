@@ -8,4 +8,10 @@
     background: #333;
     height: 100vh;
     position: fixed;
+    
+}
+.menu-lateral a{
+    margin-left: 100px;
+    font-size: 21px;
+    color: white;
 }
