@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <nav class="cadastros">
+        
+        <form action="perfil.html" method="post">
+           <!--tema-->
+           <span> <i class="bi bi-pencil-square"></i> Cadastro</span>
+           <!--fim do tema-->
+        <input type="email" placeholder="E-mail"  required>
+        <!--senha -->
+        <input type="password" placeholder="Senha" required>
+        <!--confirmar senha-->
+        <input type="password" placeholder="Confirma Senha" required>
+        <!--idade-->
+        <input type="date" name="idade" id="idade" required>
+        <!--ok-->
+        <input type="submit" id="submit" >
+    </form>
+    </nav>
+    <style>
+        /* index.css */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ocupa a altura inteira da tela */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    background-color: #f0f0f0; /* Opcional: cor de fundo */
+}
+
+form {
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column; /* Coloca os inputs um abaixo do outro */
+    gap: 10px;              /* Espaçamento entre os campos */
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+    </style>
+    <!--script-->
+    <script>
+
+    const form = document.querySelector('form');
+    const submitBtn = document.getElementById('submit');
+
+    submitBtn.addEventListener('click', (event) => {
+        // Verifica se o formulário é válido (campos 'required' preenchidos)
+        if (form.checkValidity()) {
+            alert('Cadastro concluído com sucesso!');
+        } else {
+            alert('Cadastro não concluído! Por favor, preencha todos os campos.');
+        }
+    });
+
+    </script>
+</body>
+</html>

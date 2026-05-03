@@ -1,22 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como alivia o estresse</title>
+    <title>Como alivia o estrece</title>
 </head>
 <body>
-    <!--aqui vi ter o menu -->
-    <nav class="menu-lateral">
-        <a href="#"><i class="bi bi-list"></i></a>
-    </nav>
-    <!--catalogos-->
-    <nav class="catalogos">
-        <li></li>
+    <nav>
+        <div class="btn-menu">
+            <a href=""><i class="bi bi-list"></i></a>
+        </div>
+        <!--programação-->
+        <div class="catalogo">
+            <br>
+            <div class="videos">
+                <ul><a href="#"><i class="bi bi-camera-video"></i> Videos</a> </ul>
+            </div>
+            <br>
+            <div class="entra">
+                <ul><a href="#"><i class="bi bi-box-arrow-in-right"></i> Entra</a> </ul>
+            </div>
+            <br>
+            <div class="cadastro">
+                 <ul><a href="cadastro.html"><i class="bi bi-pencil-square"></i> Cadastro</a></ul>
+            </div>
+        </div>
     </nav>
     <!--script-->
-    <script src="index.js"></script>
+<script>
+    
+    const btnmenu = document.querySelector(".btn-menu");
+    const catalogo = document.querySelector(".catalogo");
+
+   
+    btnmenu.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        catalogo.classList.toggle('catalogo-close');
+    });
+</script>
+
 </body>
 </html>
