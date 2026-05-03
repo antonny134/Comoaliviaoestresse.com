@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 </head>
 <body>
+    <nav class="pergunta">
+        <input type="text" placeholder="Resposta ...">
+        <!--ok-->
+        <button>ok</button>
+    </nav>
+    <nav class="usuario">
+        <!--perfil-->
+        
+    </nav>
+    <nav class="conversa">
+        <p id="resposta"></p>
+    </nav>
+    <!--style-->
+    <style>
+        body{
+            background: white;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .pergunta{
+            background: #333;
+            padding: 21px;
+            text-align: center;
+        }
+        .pergunta input{
+            border-radius: 5px;
+        }
+        .pergunta button {
+            border-radius: 5px;
+        }
+    </style>
+    <!--script-->
+    <script>
+       
+    // Alerta no início
+    prompt("Oi boa tarde como Você está ?");
     
+
+    const inputResposta = document.querySelector('.pergunta input');
+    const botaoOk = document.querySelector('.pergunta button');
+    const displayResposta = document.getElementById('resposta'); // Referência fixa para facilitar
+
+    function conversar() {
+        const mensagemUsuario = inputResposta.value.toLowerCase();
+
+        if (mensagemUsuario === "") {
+            displayResposta.innerHTML = "Digite algo para conversarmos!";
+            return;
+        }
+
+        // Lógica de respostas aparecendo no HTML
+        if (mensagemUsuario.includes("oi") || mensagemUsuario.includes("olá")) {
+            displayResposta.innerHTML = "Olá! Tudo bem com você?";
+        } 
+        else if (mensagemUsuario.includes("bem") || mensagemUsuario.includes("estou bem")) {
+            displayResposta.innerHTML = "Que bom! Fico feliz em saber. 😊";
+        } 
+        else if (mensagemUsuario.includes("quem é você")) {
+            displayResposta.innerHTML = "Eu sou um script de conversa bem simples!";
+        } 
+        else {
+            displayResposta.innerHTML = "Poxa, ainda não sei responder sobre isso. Pode perguntar outra coisa?";
+        }
+
+        inputResposta.value = ""; 
+    }
+
+    botaoOk.onclick = conversar;
+
+    inputResposta.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            conversar();
+        }
+    });
+
+    </script>
 </body>
 </html>
